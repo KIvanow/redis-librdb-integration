@@ -1,0 +1,20 @@
+{
+  "name": "redis-librdb-integration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "chmod +x scripts/setup-librdb.sh && ./scripts/setup-librdb.sh",
+    "build": "node-gyp configure && node-gyp build",
+    "start": "LD_LIBRARY_PATH=./local/lib:$LD_LIBRARY_PATH node src/index.js",
+    "postinstall": "node-gyp rebuild",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node-addon-api": "^8.2.2",
+    "node-gyp": "^10.2.0"
+  }
+}
